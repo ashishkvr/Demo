@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, ActivityIndicator, StatusBar } from "react-native";
+import { View, Text, FlatList, ActivityIndicator, StatusBar, KeyboardAvoidingView } from "react-native";
 import Header from "../components/Header";
 import { data } from "../../utils/const";
 import ListContent from "../components/ListContent";
@@ -21,11 +21,11 @@ class FlatListDemo extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-      <StatusBar
-        backgroundColor="#3bb2b2"
-        barStyle="light-content"
-      />
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <StatusBar
+          backgroundColor="#3bb2b2"
+          barStyle="light-content"
+        />
         <Header headerText="LOREM IPSUM"/>
         <FlatList
           data={data}
@@ -34,7 +34,7 @@ class FlatListDemo extends Component {
           )}
           keyExtractor={item => item.id}
         />
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }

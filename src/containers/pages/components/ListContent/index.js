@@ -62,17 +62,17 @@ export default class ListContent extends Component {
     let { listField } = this.props;
     let { clicked } = this.state;
     return (
-      <TouchableOpacity style={styles.container} onPress={this.onClicked}>
-        <View style={styles.header}>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.header} onPress={this.onClicked}>
           <Text style={styles.headerContent}>{listField}</Text>
           <TouchableOpacity onPress={this.onClicked}>
             <Icon name={ clicked ? "ios-arrow-down" : "ios-arrow-forward" } size={25} color= "blue"/>
           </TouchableOpacity>
-        </View>
+        </TouchableOpacity>
         <Collapsible collapsed={!clicked}>
           {this.content()}
         </Collapsible>
-      </TouchableOpacity>
+      </View>
     );
   }
 }
