@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     fontSize: 13
   },
   textMessage: {
-    paddingLeft: 20
+    paddingLeft: 10
   },
   commentArea: {
     margin: 10,
@@ -48,13 +48,14 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     width: width/1.3,
     justifyContent: "space-between",
-    padding: 5
   },
   commentInput: {
+    width: width/1.6,
     borderRadius: 5,
   },
   iconSend: {
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingRight: 10
   }
 });
 

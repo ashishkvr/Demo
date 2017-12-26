@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, FlatList, ActivityIndicator, StatusBar, KeyboardAvoidingView } from "react-native";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Header from "../components/Header";
 import { data } from "../../utils/const";
 import ListContent from "../components/ListContent";
@@ -21,7 +22,12 @@ class FlatListDemo extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <KeyboardAwareScrollView
+        style={{ backgroundColor: '#4c69a5' }}
+        resetScrollToCoords={{ x: 0, y: 0 }}
+        contentContainerStyle={styles.container}
+        scrollEnabled={false}
+      >
         <StatusBar
           backgroundColor="#3bb2b2"
           barStyle="light-content"
@@ -34,7 +40,7 @@ class FlatListDemo extends Component {
           )}
           keyExtractor={item => item.id}
         />
-      </KeyboardAvoidingView>
+      </KeyboardAwareScrollView>
     );
   }
 }
