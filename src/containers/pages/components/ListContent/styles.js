@@ -1,6 +1,7 @@
 import {
   StyleSheet,
-  Dimensions
+  Dimensions,
+  Platform
 } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   commentInput: {
+    padding: Plaform.OS === "ios" ? 10 : 0;
     width: width/1.6,
     borderRadius: 5,
   },
